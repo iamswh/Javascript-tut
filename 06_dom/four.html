@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Chai aur code | DOM</title>
+	</head>
+	<body style="background-color: #212121; color: #fff">
+		<ul class="language">
+			<li>Javascript</li>
+		</ul>
+	</body>
+	<script>
+		/*----Function for creating element using function---------*/
+
+		// This function is less optimised
+		function addLanguage(langName) {
+			const li = document.createElement("li");
+			// li.innerHTML = langName;
+			li.innerHTML = `${langName}`;
+			document.querySelector(".language").appendChild(li);
+		}
+
+		addLanguage("Python");
+
+		// More optimised approach
+		function addOptiLanguage(langName) {
+			const li = document.createElement("li");
+			const languageName = document.createTextNode(langName);
+			li.appendChild(languageName);
+			document.querySelector(".language").appendChild(li);
+		}
+
+		addOptiLanguage("Java");
+		addOptiLanguage("GoLang");
+		/*--------------------------------------------------------*/
+	</script>
+</html>
