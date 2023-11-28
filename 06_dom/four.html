@@ -34,5 +34,22 @@
 		addOptiLanguage("Java");
 		addOptiLanguage("GoLang");
 		/*--------------------------------------------------------*/
+
+		/*------Edit elements in DOM-------------------------------*/
+		const secondLang = document.querySelector("li:nth-child(2)");
+		// secondLang.innerHTML = "C++";   /*This is done usig innerHTML*/
+		const newLi = document.createElement("li");
+		newLi.textContent = "Mojo";
+		secondLang.replaceWith(newLi);
+
+		//EDIT
+		const firstLang = document.querySelector("li:first-child");
+		firstLang.outerHTML = "<li>TypeScript</li>";
+		/*---------------------------------------------------------*/
+
+		/*-----------------Remove of DOM element-------------------*/
+		const lastLang = document.querySelector("li:last-child");
+		lastLang.remove();
+		/*---------------------------------------------------------*/
 	</script>
 </html>
