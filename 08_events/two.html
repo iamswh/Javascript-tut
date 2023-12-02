@@ -7,5 +7,28 @@
 	</head>
 	<body>
 		<h1>Chai aur Code</h1>
+		<button id="stop">Stop</button>
 	</body>
+	<script>
+		// setTimeout(() => {
+		// 	console.log("Wajid");
+		// }, 2000);
+
+		const sayHitesh = () => {
+			console.log("Wajid");
+		};
+
+		const changeText = () => {
+			document.querySelector("h1").innerHTML = "Best JS Series";
+		};
+
+		setTimeout(sayHitesh, 2000); // giving reference of the function in the palce of handler/callBack function
+		const changeMe = setTimeout(changeText, 2000);
+
+		/*-------------To stop setTimeOut-------------*/
+		document.querySelector("#stop").addEventListener("click", () => {
+			clearTimeout(changeMe); //Here it need to pass a settimeout parameter inside the cleartimeout function
+			console.log("Stopped");
+		});
+	</script>
 </html>
