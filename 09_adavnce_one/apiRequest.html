@@ -19,7 +19,12 @@
 			if (xhr.readyState === 4) {
 				// console.log(this.responseText);
 				const data = JSON.parse(this.responseText);
-				console.log(data.location);
+				console.log(data.name);
+				// The below code is to inject name and location inside the "h1" from the api
+				const text = document.createTextNode(
+					" " + data.name + " " + "you are at" + " " + data.location
+				);
+				document.querySelector("h1").appendChild(text);
 			}
 		};
 		xhr.send();
